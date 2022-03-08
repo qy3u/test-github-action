@@ -7,7 +7,7 @@ env:
 jobs:
   ubuntu:
     name: Ubuntu
-    runs-on: 200-25
+    runs-on: [self-hosted]
     steps:
       - name: Install Rust
         uses: actions-rs/toolchain@v1
