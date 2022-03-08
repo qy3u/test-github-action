@@ -9,6 +9,9 @@ jobs:
     name: Ubuntu
     runs-on: [self-hosted]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
