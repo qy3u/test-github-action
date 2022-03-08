@@ -9,6 +9,11 @@ jobs:
     name: Ubuntu
     runs-on: [self-hosted]
     steps:
+      - uses: Jimver/cuda-toolkit@v0.2.5
+        id: cuda-toolkit
+        with:
+        cuda: '11.4.1'
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -20,11 +25,19 @@ jobs:
           override: true
           components: rustfmt
 
-      - name: build
+      - name: build rs
         run: |
           rustc main.rs
 
       - name: run
         run: |
             ./main
+
+      - name: build cu
+        run: |
+          nvcc main.rs
+
+      - name: run
+        run: |
+            ./a.out
 
