@@ -1,0 +1,27 @@
+name: simple test
+on: [push]
+
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  ubuntu:
+    name: Ubuntu
+    runs-on: 200-25
+    steps:
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+          components: rustfmt
+
+      - name: build
+        run: |
+          rustc main.rs
+
+      - name: run
+        run: |
+            ./main
+
