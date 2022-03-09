@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 int main() {
-    printf("Hello Cu\n");
+    printf("Hello action cu\n");
 }
