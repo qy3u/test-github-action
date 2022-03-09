@@ -35,7 +35,7 @@ jobs:
 
       - name: build cu
         run: |
-          nvcc main.rs
+          nvcc main.cu
 
       - name: run
         run: |
